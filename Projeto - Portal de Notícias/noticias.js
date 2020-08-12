@@ -1,16 +1,14 @@
-var http = require('http');
+var express = require('express');
+var app = express(); //executando a função contida em 'express'
 
-var server = http.createServer(function(req, res){
-    var categoria = req.url;
+app.get('/',function(req, res){
+    res.send("<html><body>Portal de Notícias em Express</body></html>")
+})
 
-    if(categoria == '/tecnologia'){
-        res.end("<html><body>Notícias de Tecnologia</body></html>")
-    }
+app.get('/tecnologia',function(req, res){
+    res.send("<html><body>Portal de Notícias (tecnológicas) em Express</body></html>")
+})
 
-    if(categoria == '/moda'){
-        res.end("<html><body>Notícias de Moda</body></html>")
-    }
-    else{
-        res.end("<html><body>Pode crer</body></html>")
-    }
-}).listen(3000);
+app.listen(3000, function(){
+   
+})
