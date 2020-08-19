@@ -1,8 +1,13 @@
-var express = require('express');
+var express = require('express')
+var consign = require('consign')
+var app = express(); 
 
-var app = express(); //executando a função contida em 'express'
-
-app.set('view engine', 'ejs')//.set => para modificar algo na tabela de propriedade do Express. Depois disso o Express entende que o gerador de views será o EJS.
+app.set('view engine', 'ejs')
 app.set('views', './app/views')
 
-module.exports = app;
+consign()
+    .include('app/routes')
+    .then('config/dbConnection.js')
+    .into(app)
+
+module.exports = app
