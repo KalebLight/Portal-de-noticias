@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Erros</title>
+		</head>
+	<body>
+
+        <h1>Erros</h1>
+            <% if(validacao) { %> 
+                <ul>
+                    <% for(var i = 0 ; i < validacao.length ; i++) { %>
+                        <li>
+                            <%=validacao[i].msg%>
+                        </li>
+                    <% } %>	
+                </ul>		
+            <% } %>
+
+		</table>
+	</body>
+</html>

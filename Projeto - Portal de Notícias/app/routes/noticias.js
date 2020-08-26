@@ -4,7 +4,7 @@ module.exports = function(application) {
         var noticiasModel = new application.app.models.NoticiasDAO(connection);
 
         noticiasModel.getNoticias(function(error, result){
-            res.render("noticias/noticias", {noticias : result} )
+            res.render("noticias/noticias", {noticias : result})
         })             
     });
 }   
