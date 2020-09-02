@@ -7,7 +7,7 @@ NoticiasDAO.prototype.getNoticia = function(callback){
 }
 
 NoticiasDAO.prototype.getNoticias = function(callback){
-    this._connection.query('select * from noticias', callback);   
+    this._connection.query('select * from noticias order by data_craicao desc', callback);   
 }
 
 NoticiasDAO.prototype.salvarNoticia = function(noticia, callback){
